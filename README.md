@@ -43,8 +43,8 @@ Due to the nature of the assignment, this project is not open to contributions. 
 
 ## Acknowledgments
 
-<a href="https://flatironschool.com"><img src="Images/flatiron.png" width="80" height="40"  alt="Flatiron School Logo"/></a>
+<a href="https://flatironschool.com"><img src="images/flatiron.png" width="80" height="40"  alt="Flatiron School Logo"/></a>
 Special thanks to Jacob Eli Thomas and Victor Geislinger, my instructors at [Flatiron School](https://flatironschool.com), for their encouragement, instruction, and guidance.
 
-<a href="https://www.kaggle.com"><img src="Images/kaggle.png" width="80" height="40"  alt="Kaggle Logo"/></a>
+<a href="https://www.kaggle.com"><img src="images/kaggle.png" width="80" height="40"  alt="Kaggle Logo"/></a>
 Thanks to [Kaggle](https://www.kaggle.com) for access to data found in [Heart Disease Ensemble Classifier](https://www.kaggle.com/danimal/heartdiseaseensembleclassifier), and particular thanks to [Nathan S. Robinson](https://www.kaggle.com/iamkon/ml-models-performance-on-risk-prediction) for his work on the same dataset: it was beautifully organized, instructive, and a constant source of clarity and inspiration. 
