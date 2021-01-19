@@ -3,13 +3,14 @@ import pandas as pd
 import numpy as np
 import pickle
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 import seaborn as sns
 import altair as alt
 
 sns.set_style('whitegrid')
-sns.set_palette('mako')
+sns.set_palette('viridis')
 
-raw_df = pd.read_csv('data/Heart_Disease_Data.csv')
+raw_df = pd.read_csv('data/app_data.csv')
 
 '# Analyze Your Risk of Heart Disease'
 
@@ -54,10 +55,19 @@ if len(options)==1:
     st.pyplot(fig)
 
 if len(options)==2:
-    options+=['pred_attribute']
-#     fig, ax = plt.subplots()
-    st.altair_chart(alt.Chart(raw_df[options]).mark_circle(size=60).encode(
+    st.altair_chart(alt.Chart(raw_df[options+['pred_attribute']]).mark_circle(size=60).encode(
     x=options[0],
     y=options[1],
-    color=options[2],
-    tooltip=[options[0], options[1], options[2]]).interactive(), True)
+    color='pred_attribute',
+    tooltip=[options[0], options[1], 'pred_attribute']).interactive(), True)
+    
+if len(options)==3:
+    fig = plt.figure(figsize=(10,10))
+    ax = fig.add_subplot(111,projection='3d')
+    sctt = ax.scatter3D(raw_df[option1], raw_df[option2], raw_df[option3], c=raw_df['pred_attribute'], cmap='viridis', marker='o')
+    ax.set_xlabel(option1)
+    ax.set_ylabel(option2)
+    ax.set_zlabel(option3)
+    fig.colorbar(sctt, ax = ax, shrink = 0.5, aspect = 15, ticks=[0,1], boundaries = [-.5, .5, 1.5], label='pred_attribute')
+    st.pyplot(fig)
+    
