@@ -1,10 +1,30 @@
 # Predicting Heart Disease
 
-For my third module project for Flatiron School, I chose to build a binary classifier to predict [heart disease](https://www.kaggle.com/danimal/heartdiseaseensembleclassifier). I explore a variety of relatively simple classifiers (read: no neural networks)––Support Vector Machines, Decision Trees and Random Forests, AdaBoost and XGBoost, KNN––and fine tune each to upwards of 90% recall on test data. My final model, an ensemble [Voting Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingClassifier.html#sklearn.ensemble.VotingClassifier), combines some of the best models to achieve 95% recall on test data.
+For my third module project for Flatiron School, I chose to build a binary classifier to predict [heart disease](https://www.kaggle.com/danimal/heartdiseaseensembleclassifier). Because this model has healthcare applications, the emphasis is on recall rather than accuracy or precision when evaluating model performance. I explore a variety of relatively simple classifiers (read: no neural networks)––Support Vector Machines, Decision Trees and Random Forests, AdaBoost and XGBoost, KNN––and fine tune each to upwards of 85% recall on test data. My final model, an ensemble [voting classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingClassifier.html#sklearn.ensemble.VotingClassifier), combines some of the best models to achieve 95% recall on test data.
 
 ### EDA and Preprocessing
+![Pearson Correlation Heatmap](images/pearson.png)
+![Histograms for final, preprocessed predictors](images/histograms_all_transformed.png)
 ### Model Training
+![Precision-recall curves for all classsifiers](images/precision_recall_curves_all.png)
+![Precision-recall curve for soft voting ensemble classifier](images/precision_recall_curve_vote_soft.png)
+![Confusion matrix for voting ensemble](images/conf_gs_soft.png) ![Confusion matrix for voting ensemble (fine-tuned for recall)](images/conf_custom_soft.png)
 ### Results
+
+| Model | Final Test Recall | Final Test Accuracy |
+|-|-|-|
+| Ensemble Classifier (Soft Vote) | **94%** | 89% |
+| Logistic Regression | **89%** | 85% |
+| Linear SVC | **89%** | 85% |
+| RBF SVC | **89%** | 83% |
+| Sigmoid SVC | 86% | 88% |
+| Decision Tree | 86% | 85% |
+| Random Forest | 86% | 85% |
+| AdaBoost | 86% | 84% |
+| Polynomial SVC | 86% | 81% |
+| XGBoost | 83% | 83% |
+| KNN | 83% | 84% |
+
 ### Conclusions
 
 ## Contents of Repository
