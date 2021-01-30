@@ -3,8 +3,19 @@
 For my third module project for Flatiron School, I chose to build a binary classifier to predict [heart disease](https://www.kaggle.com/danimal/heartdiseaseensembleclassifier). Because this model has healthcare applications, the emphasis is on recall rather than accuracy or precision when evaluating model performance. I explore a variety of relatively simple classifiers (read: no neural networks)––Support Vector Machines, Decision Trees and Random Forests, AdaBoost and XGBoost, KNN––and fine tune each to upwards of 85% recall on test data. My final model, an ensemble [voting classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingClassifier.html#sklearn.ensemble.VotingClassifier), combines some of the best models to achieve 95% recall on test data.
 
 ### EDA and Preprocessing
+
+Of the raw data of 303 patients, 6 had null values in either `ca` or `thal`; for this being so few instances of missing data, those data points were just dropped, making a total of 297 data points.
+
+The original labels, ranging from 0, no heart disease, to 4, the most advanced stage of heart disease, were redesigned to range from `0`, no heart disease, and the original values of [1, 4] were squished into a single category, `1`, "presence of heart disease."
+
+Features were standardized and then analyzed for correlation among each other using a Pearson correlation heatmap. Simultaneously, a random forest was trained to evaluate feature importance, with `thalach`, `cp`, `thal`, and `ca` taking the top four spots.
+
 ![Pearson Correlation Heatmap](images/pearson.png)
+
+`thalach` was ranked the most important feature, but looking at the heatmap, it's also the most correlated with the most other features. If I had to pick just one feature, I'd choose this one, but for the sake of choosing multiple features, I'm going to exclude it; none of my other features are so highly correlated with each other. I keep the next six most significant features, none of which are egregiously correlated with each other, for my final set of features: `cp`, `thal`, `ca`, `oldpeak`, `age`, and `chol`. A histogram of each of these final features is shown below, where all continuous features except `oldpeak` are roughly normally distributed about 0.
+
 ![Histograms for final, preprocessed predictors](images/histograms_all_transformed.png)
+
 ### Model Training
 ![Precision-recall curves for all classsifiers](images/precision_recall_curves_all.png)
 ![Precision-recall curve for soft voting ensemble classifier](images/precision_recall_curve_vote_soft.png)
