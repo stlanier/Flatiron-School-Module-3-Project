@@ -48,7 +48,7 @@ The above figure shows recall vs threshold and accuracy vs threshold plotted tog
 
 ### Conclusions
 
-
+By (1) list-wise removing missing data; (2) converting the classification problem to a binary one and standardizing features; and (3) manually setting the probability threshold for disease detection to 0.35, I was able to achieve **0.95 recall** and **0.89 accuracy** from my best model, a soft voting ensemble classifier made up of a linear SVM, logistic regression classifier, and an AdaBoost classifier. 
 
 ## Contents of Repository
 
