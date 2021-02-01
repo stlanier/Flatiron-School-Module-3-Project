@@ -29,7 +29,7 @@ To further improve the voting ensemble classifier's recall, I switched from usin
 
 The above figure shows recall vs threshold and accuracy vs threshold plotted together to more easily see the tradeoff between the two; as expected, as recall is increases accuracy generally decreases and vice versa. A happy medium between the two was found at around a 0.35 probability threshold––i.e., if the model predicted a 0.35 chance or higher of heart disease, then the model predicted heart disease––which featured ~0.95 recall while still retaining a relative maximum in accuracy ~0.85. Plotting accuracy-recall tradeoff by threshold in this way yielded significant improvement to model recall, increasing the original recall from 0.89 to 0.94; accuracy decreased only marginally from 0.85 to 0.84. Confusion matrices for before and after threshold installed below.
 
-![Confusion matrix for voting ensemble](images/conf_gs_soft.png) ![Confusion matrix for voting ensemble (fine-tuned for recall)](images/conf_custom_soft.png)
+![Confusion matrix side-by-side for voting ensemble](images/conf_side_by_side.png)
 ### Results
 
 | Model | Final Test Recall | Final Test Accuracy |
@@ -47,6 +47,8 @@ The above figure shows recall vs threshold and accuracy vs threshold plotted tog
 | KNN | 83% | 84% |
 
 ### Conclusions
+
+
 
 ## Contents of Repository
 
