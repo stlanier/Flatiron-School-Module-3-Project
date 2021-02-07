@@ -48,7 +48,12 @@ The above figure shows recall vs threshold and accuracy vs threshold plotted tog
 
 ### Conclusions
 
-By (1) list-wise removing missing data; (2) converting the classification problem to a binary one and standardizing features; and (3) manually setting the probability threshold for disease detection to 0.35, I was able to achieve **0.95 recall** and **0.89 accuracy** from my best model, a soft voting ensemble classifier made up of a linear SVM, logistic regression classifier, and an AdaBoost classifier. 
+By (1) list-wise removing missing data; (2) converting the classification problem to a binary one and standardizing features; and (3) manually setting the probability threshold for disease detection to 0.35, I was able to achieve **0.95 recall** and **0.89 accuracy** from my best model, a soft voting ensemble classifier made up of a linear SVM, logistic regression classifier, and an AdaBoost classifier.
+
+## App Demo
+The app, currently waiting for hosting, allows  users to compare the relationship between heart disease and up to three predictors.
+
+![Gif demo of app](images/app_demo.gif)
 
 ## Contents of Repository
 
