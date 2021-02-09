@@ -10,7 +10,7 @@ import altair as alt
 sns.set_style('whitegrid')
 sns.set_palette('viridis')
 
-raw_df = pd.read_csv('data/app_data.csv')
+raw_df = pd.read_csv('data/app_data.csv',  index_col='Unnamed: 0')
 
 '# Analyze Your Risk of Heart Disease'
 
