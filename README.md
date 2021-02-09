@@ -2,6 +2,8 @@
 
 For my third module project for Flatiron School, I chose to build a binary classifier to predict [heart disease](https://www.kaggle.com/danimal/heartdiseaseensembleclassifier). Because this model has healthcare applications, the emphasis is on recall rather than accuracy or precision when evaluating model performance. I explore a variety of relatively simple classifiers (read: no neural networks)––Support Vector Machines, Decision Trees and Random Forests, AdaBoost and XGBoost, KNN––and fine tune each to upwards of 85% recall on test data. My final model, an ensemble [voting classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingClassifier.html#sklearn.ensemble.VotingClassifier), combines some of the best models to achieve 95% recall on test data.
 
+An interactive app is hosted [here](https://share.streamlit.io/stlanier/heart-disease-classifier/app.py). Currently, you can explore the raw data and soon will be able to interact with the best classifier from this project.
+
 ### EDA and Preprocessing
 
 Of the raw data of 303 patients, 6 had null values in either `ca` or `thal`; for this being so few instances of missing data, those data points were just dropped, making a total of 297 data points.
@@ -51,7 +53,7 @@ The above figure shows recall vs threshold and accuracy vs threshold plotted tog
 By (1) list-wise removing missing data; (2) converting the classification problem to a binary one and standardizing features; and (3) manually setting the probability threshold for disease detection to 0.35, I was able to achieve **0.95 recall** and **0.89 accuracy** from my best model, a soft voting ensemble classifier made up of a linear SVM, logistic regression classifier, and an AdaBoost classifier.
 
 ## App Demo
-The app, currently waiting for hosting, allows  users to compare the relationship between heart disease and up to three predictors.
+The app, hosted [here](https://share.streamlit.io/stlanier/heart-disease-classifier/app.py), allows  users to compare the relationship between heart disease and up to three predictors. Future features will allow users to interact with the classifiers used in this project.
 
 ![Gif demo of app](images/app_demo.gif)
 
@@ -67,12 +69,12 @@ The app, currently waiting for hosting, allows  users to compare the relationshi
   * **1_eda_and_preprocessing.ipynb**
   * **2_sklearn_models.ipynb**
   * **3_ensembl_classifier.ipynb**
-* **app.py** is a [Streamlit](https://www.streamlit.io/) app for exploring the raw dataset and interacting with the voting ensemble classifier. (Currently not hosted.)
+* **app.py** is a [Streamlit](https://www.streamlit.io/) app for exploring the raw dataset and interacting with the voting ensemble classifier, hosted [here](https://share.streamlit.io/stlanier/heart-disease-classifier/app.py).
 * **presentation.pdf** contains my powerpoint presentation for a non-technical audience.
 
 ## Libraries
 
-The standard packages for data analysis are required–[NumPy](https://numpy.org/), [Pandas](https://pandas.pydata.org/), and [Matplotlib](https://matplotlib.org/)––as well as [pydotplus](https://pypi.org/project/pydotplus/) and [Graphviz](https://graphviz.org/) to make a visualization of a decision tree, [scikit-learn](https://scikit-learn.org/stable/index.html) for a number of classifiers, and [XGBoost](https://xgboost.readthedocs.io/en/latest/).
+Standard packages for data analysis and visualization are required–[NumPy](https://numpy.org/), [Pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/), and [Seaborn](https://seaborn.pydata.org/)––as well as [pydotplus](https://pypi.org/project/pydotplus/) and [Graphviz](https://graphviz.org/) to make a visualization of a decision tree, [scikit-learn](https://scikit-learn.org/stable/index.html) for a number of classifiers, and [XGBoost](https://xgboost.readthedocs.io/en/latest/).
 
 
 ## Contributing
