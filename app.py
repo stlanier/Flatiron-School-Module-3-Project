@@ -18,9 +18,9 @@ option1 = st.sidebar.selectbox('Factor 1', (['-']+list(raw_df.columns))[:-1])
 option2 = st.sidebar.selectbox('(Optional) Factor 2', (['-']+list(raw_df.columns))[:-1])
 option3 = st.sidebar.selectbox('(Optional) Factor 3', (['-']+list(raw_df.columns))[:-1])
 
-with open('models/softvote.pkl', 'rb') as fp:
-    model = pickle.load(fp)
-    
+# with open('models/softvote.pkl', 'rb') as fp:
+#     model = pickle.load(fp)
+
 options = [option for option in [option1, option2, option3] if option !='-']
 
 if len(options)==1:
@@ -38,7 +38,7 @@ if len(options)==2:
     y=options[1],
     color='pred_attribute',
     tooltip=[options[0], options[1], 'pred_attribute']).interactive(), True)
-    
+
 if len(options)==3:
     fig = plt.figure(figsize=(10,10))
     ax = fig.add_subplot(111,projection='3d')
@@ -48,8 +48,8 @@ if len(options)==3:
     ax.set_zlabel(option3)
     fig.colorbar(sctt, ax = ax, shrink = 0.5, aspect = 15, ticks=[0,1], boundaries = [-.5, .5, 1.5], label='pred_attribute')
     st.pyplot(fig)
-    
-if st.checkbox('Legend'):  
+
+if st.checkbox('Legend'):
     st.write('''
     |Key|Meaning|Interpretation|
     |---|---|---|
