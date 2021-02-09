@@ -71,6 +71,7 @@ The app, hosted [here](https://share.streamlit.io/stlanier/heart-disease-classif
   * **3_ensembl_classifier.ipynb**
 * **app.py** is a [Streamlit](https://www.streamlit.io/) app for exploring the raw dataset and interacting with the voting ensemble classifier, hosted [here](https://share.streamlit.io/stlanier/heart-disease-classifier/app.py).
 * **presentation.pdf** contains my powerpoint presentation for a non-technical audience.
+* **requirements.txt** specifies requirements for Streamlit app deployment.
 
 ## Libraries
 
